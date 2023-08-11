@@ -10,6 +10,7 @@ const sleep = async function sleep(ms: number) {
 export class BywiseProvider {
     public readonly web3: Web3;
     private readonly explorer: string;
+    private readonly dashboard: string;
     private readonly walletApi: string;
     private readonly chain: string;
     private static data: { message: string, tx?: Tx, output?: TxOutput, address?: string } = { message: '' };
@@ -24,12 +25,14 @@ export class BywiseProvider {
                 initialNodes: ['https://node1.bywise.org']
             });
             this.explorer = 'https://explorer.bywise.org'
+            this.dashboard = 'https://dashboard.bywise.org'
             this.walletApi = 'https://wallet-api.bywise.org'
         } else if (chain === 'testnet') {
             this.web3 = new Web3({
                 initialNodes: ['https://testnet-node1.bywise.org']
             });
             this.explorer = 'https://testnet-explorer.bywise.org'
+            this.dashboard = 'https://testnet-dashboard.bywise.org'
             this.walletApi = 'https://testnet-api.bywise.org'
         } else {
             throw new Error(`not implemented yet`);
@@ -57,13 +60,13 @@ export class BywiseProvider {
         if (!this.isInit) {
             this.isInit = true;
             window.addEventListener("message", (event) => {
-                if (event.origin !== this.walletApi) return;
+                if (event.origin !== this.dashboard) return;
                 BywiseProvider.data = JSON.parse(event.data);
             }, false);
         }
 
         BywiseProvider.data.message = '';
-        this.popupCenter(`${this.walletApi}/connect`, 'Connect');
+        this.popupCenter(`${this.dashboard}/connect`, 'Connect');
 
         while (BywiseProvider.data.message === '') {
             await sleep(1000);
@@ -84,7 +87,7 @@ export class BywiseProvider {
         })).replace(/=/g, '');
 
         BywiseProvider.data.message = '';
-        this.popupCenter(`${this.walletApi}/send_transaction?tx=${encodedData}`, 'Connect');
+        this.popupCenter(`${this.dashboard}/send_transaction?tx=${encodedData}`, 'Connect');
 
         while (BywiseProvider.data.message === '') {
             await sleep(1000);
