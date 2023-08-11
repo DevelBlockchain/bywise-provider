@@ -1,11 +1,12 @@
 {
   "name": "@bywise/provider",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Web3 provider of Bywise",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "files": [
-    "lib/**/*"
+    "lib/**/*",
+    "README.md"
   ],
   "scripts": {
     "build": "tsc",

@@ -29,7 +29,7 @@ export default class BywiseProvider {
     send: (tx: {
         to: string[];
         amount: string[];
-        type: TxType;
+        type: TxType | string;
         data: any;
     }) => Promise<{
         tx: Tx;
