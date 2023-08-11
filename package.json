@@ -1,6 +1,6 @@
 {
   "name": "@bywise/provider",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Web3 provider of Bywise",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -22,6 +22,7 @@
   "keywords": [
     "web3",
     "provider",
+    "web3-provider",
     "bywise",
     "blockchain"
   ],

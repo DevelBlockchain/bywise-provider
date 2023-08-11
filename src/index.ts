@@ -109,7 +109,7 @@ export default class BywiseProvider {
     send = async (tx: {
         to: string[],
         amount: string[],
-        type: TxType,
+        type: TxType | string,
         data: any,
     }): Promise<{ tx: Tx, output: TxOutput } | null> => {
         const encodedData = base64.encode(JSON.stringify({
