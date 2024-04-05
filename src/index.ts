@@ -37,7 +37,7 @@ export default class BywiseProvider {
                 initialNodes: ['https://node1.bywise.org']
             });
             this.explorer = 'https://explorer.bywise.org'
-            this.dashboard = 'https://dashboard.bywise.org'
+            this.dashboard = 'https://app.bywise.cloud'
             this.walletApi = 'https://wallet-api.bywise.org'
         } else if (chain === 'testnet') {
             this.web3 = new Web3({
