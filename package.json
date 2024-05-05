@@ -1,6 +1,6 @@
 {
   "name": "@bywise/provider",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Web3 provider of Bywise",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -45,7 +45,7 @@
     "typescript": "^5.4.5"
   },
   "dependencies": {
-    "@bywise/web3": "^1.0.1",
+    "@bywise/web3": "^1.0.3",
     "base-64": "^1.0.0"
   }
 }
