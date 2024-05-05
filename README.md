@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/bywise.png" width="300" alt="Bywise Web3" />
+</p>
+
 # Bywise Web3 Provider
 
 ## Contributors Welcome!
